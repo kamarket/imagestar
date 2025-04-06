@@ -1,8 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+:root {
+    --primary-color: #4f46e5;
+    --secondary-color: #5D5FEF;
+    --dark-color: #111827;
+    --light-color: #F9FAFB;
+    --success-color: #10B981;
+    --accent-color: #7C3AED;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     scroll-behavior: smooth;
+    background-color: #F3F4F6;
+    color: var(--dark-color);
+    line-height: 1.6;
 }
 
 input:-webkit-autofill,
@@ -14,4 +26,102 @@ input:-webkit-autofill:active {
 
 textarea {
     resize: none;
+}
+
+.container {
+    max-width: 960px;
+    padding: 40px 20px;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    padding: 40px;
+    margin-bottom: 60px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.form-title {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-title h3 {
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-title h3 i {
+    color: var(--primary-color);
+}
+
+.form-section-title {
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 12px 16px;
+    border: 1px solid #E5E7EB;
+    background-color: #F9FAFB;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.form-floating > .form-control,
+.form-floating > .form-select {
+    height: calc(3.5rem + 2px);
+    padding: 1rem 0.75rem;
+}
+
+.form-floating > label {
+    padding: 1rem 0.75rem;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
